@@ -9,38 +9,258 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ShortlistsRouteImport } from './routes/shortlists'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as RankingsRouteImport } from './routes/rankings'
+import { Route as JobsRouteImport } from './routes/jobs'
+import { Route as ExplainabilityRouteImport } from './routes/explainability'
+import { Route as EngineRouteImport } from './routes/engine'
+import { Route as CompareRouteImport } from './routes/compare'
+import { Route as CandidatesRouteImport } from './routes/candidates'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as JobsNewRouteImport } from './routes/jobs.new'
+import { Route as JobsAnalyticsRouteImport } from './routes/jobs.analytics'
+import { Route as CandidatesAllRouteImport } from './routes/candidates.all'
 
+const ShortlistsRoute = ShortlistsRouteImport.update({
+  id: '/shortlists',
+  path: '/shortlists',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RankingsRoute = RankingsRouteImport.update({
+  id: '/rankings',
+  path: '/rankings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JobsRoute = JobsRouteImport.update({
+  id: '/jobs',
+  path: '/jobs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExplainabilityRoute = ExplainabilityRouteImport.update({
+  id: '/explainability',
+  path: '/explainability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EngineRoute = EngineRouteImport.update({
+  id: '/engine',
+  path: '/engine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompareRoute = CompareRouteImport.update({
+  id: '/compare',
+  path: '/compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandidatesRoute = CandidatesRouteImport.update({
+  id: '/candidates',
+  path: '/candidates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JobsNewRoute = JobsNewRouteImport.update({
+  id: '/new',
+  path: '/new',
+  getParentRoute: () => JobsRoute,
+} as any)
+const JobsAnalyticsRoute = JobsAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => JobsRoute,
+} as any)
+const CandidatesAllRoute = CandidatesAllRouteImport.update({
+  id: '/all',
+  path: '/all',
+  getParentRoute: () => CandidatesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/candidates': typeof CandidatesRouteWithChildren
+  '/compare': typeof CompareRoute
+  '/engine': typeof EngineRoute
+  '/explainability': typeof ExplainabilityRoute
+  '/jobs': typeof JobsRouteWithChildren
+  '/rankings': typeof RankingsRoute
+  '/reports': typeof ReportsRoute
+  '/shortlists': typeof ShortlistsRoute
+  '/candidates/all': typeof CandidatesAllRoute
+  '/jobs/analytics': typeof JobsAnalyticsRoute
+  '/jobs/new': typeof JobsNewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/candidates': typeof CandidatesRouteWithChildren
+  '/compare': typeof CompareRoute
+  '/engine': typeof EngineRoute
+  '/explainability': typeof ExplainabilityRoute
+  '/jobs': typeof JobsRouteWithChildren
+  '/rankings': typeof RankingsRoute
+  '/reports': typeof ReportsRoute
+  '/shortlists': typeof ShortlistsRoute
+  '/candidates/all': typeof CandidatesAllRoute
+  '/jobs/analytics': typeof JobsAnalyticsRoute
+  '/jobs/new': typeof JobsNewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/candidates': typeof CandidatesRouteWithChildren
+  '/compare': typeof CompareRoute
+  '/engine': typeof EngineRoute
+  '/explainability': typeof ExplainabilityRoute
+  '/jobs': typeof JobsRouteWithChildren
+  '/rankings': typeof RankingsRoute
+  '/reports': typeof ReportsRoute
+  '/shortlists': typeof ShortlistsRoute
+  '/candidates/all': typeof CandidatesAllRoute
+  '/jobs/analytics': typeof JobsAnalyticsRoute
+  '/jobs/new': typeof JobsNewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/analytics'
+    | '/candidates'
+    | '/compare'
+    | '/engine'
+    | '/explainability'
+    | '/jobs'
+    | '/rankings'
+    | '/reports'
+    | '/shortlists'
+    | '/candidates/all'
+    | '/jobs/analytics'
+    | '/jobs/new'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/analytics'
+    | '/candidates'
+    | '/compare'
+    | '/engine'
+    | '/explainability'
+    | '/jobs'
+    | '/rankings'
+    | '/reports'
+    | '/shortlists'
+    | '/candidates/all'
+    | '/jobs/analytics'
+    | '/jobs/new'
+  id:
+    | '__root__'
+    | '/'
+    | '/analytics'
+    | '/candidates'
+    | '/compare'
+    | '/engine'
+    | '/explainability'
+    | '/jobs'
+    | '/rankings'
+    | '/reports'
+    | '/shortlists'
+    | '/candidates/all'
+    | '/jobs/analytics'
+    | '/jobs/new'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  CandidatesRoute: typeof CandidatesRouteWithChildren
+  CompareRoute: typeof CompareRoute
+  EngineRoute: typeof EngineRoute
+  ExplainabilityRoute: typeof ExplainabilityRoute
+  JobsRoute: typeof JobsRouteWithChildren
+  RankingsRoute: typeof RankingsRoute
+  ReportsRoute: typeof ReportsRoute
+  ShortlistsRoute: typeof ShortlistsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/shortlists': {
+      id: '/shortlists'
+      path: '/shortlists'
+      fullPath: '/shortlists'
+      preLoaderRoute: typeof ShortlistsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rankings': {
+      id: '/rankings'
+      path: '/rankings'
+      fullPath: '/rankings'
+      preLoaderRoute: typeof RankingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jobs': {
+      id: '/jobs'
+      path: '/jobs'
+      fullPath: '/jobs'
+      preLoaderRoute: typeof JobsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explainability': {
+      id: '/explainability'
+      path: '/explainability'
+      fullPath: '/explainability'
+      preLoaderRoute: typeof ExplainabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/engine': {
+      id: '/engine'
+      path: '/engine'
+      fullPath: '/engine'
+      preLoaderRoute: typeof EngineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compare': {
+      id: '/compare'
+      path: '/compare'
+      fullPath: '/compare'
+      preLoaderRoute: typeof CompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candidates': {
+      id: '/candidates'
+      path: '/candidates'
+      fullPath: '/candidates'
+      preLoaderRoute: typeof CandidatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +268,65 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/jobs/new': {
+      id: '/jobs/new'
+      path: '/new'
+      fullPath: '/jobs/new'
+      preLoaderRoute: typeof JobsNewRouteImport
+      parentRoute: typeof JobsRoute
+    }
+    '/jobs/analytics': {
+      id: '/jobs/analytics'
+      path: '/analytics'
+      fullPath: '/jobs/analytics'
+      preLoaderRoute: typeof JobsAnalyticsRouteImport
+      parentRoute: typeof JobsRoute
+    }
+    '/candidates/all': {
+      id: '/candidates/all'
+      path: '/all'
+      fullPath: '/candidates/all'
+      preLoaderRoute: typeof CandidatesAllRouteImport
+      parentRoute: typeof CandidatesRoute
+    }
   }
 }
 
+interface CandidatesRouteChildren {
+  CandidatesAllRoute: typeof CandidatesAllRoute
+}
+
+const CandidatesRouteChildren: CandidatesRouteChildren = {
+  CandidatesAllRoute: CandidatesAllRoute,
+}
+
+const CandidatesRouteWithChildren = CandidatesRoute._addFileChildren(
+  CandidatesRouteChildren,
+)
+
+interface JobsRouteChildren {
+  JobsAnalyticsRoute: typeof JobsAnalyticsRoute
+  JobsNewRoute: typeof JobsNewRoute
+}
+
+const JobsRouteChildren: JobsRouteChildren = {
+  JobsAnalyticsRoute: JobsAnalyticsRoute,
+  JobsNewRoute: JobsNewRoute,
+}
+
+const JobsRouteWithChildren = JobsRoute._addFileChildren(JobsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  CandidatesRoute: CandidatesRouteWithChildren,
+  CompareRoute: CompareRoute,
+  EngineRoute: EngineRoute,
+  ExplainabilityRoute: ExplainabilityRoute,
+  JobsRoute: JobsRouteWithChildren,
+  RankingsRoute: RankingsRoute,
+  ReportsRoute: ReportsRoute,
+  ShortlistsRoute: ShortlistsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
