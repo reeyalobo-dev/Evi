@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      SECRET_KEY: dev-secret
+      JWT_SECRET_KEY: dev-jwt
+      DATABASE_URL: sqlite:///app.db
