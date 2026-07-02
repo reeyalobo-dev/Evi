@@ -1,0 +1,73 @@
+ranking_weights:
+  reranker: 0.6
+  semantic: 0.1
+  bm25: 0.05
+  behavior: 0.1
+  role_compatibility: 0.15
+
+role_compatibility:
+  weights:
+    title_similarity: 0.25
+    career_evidence: 0.25
+    technical_experience: 0.25
+    project_evidence: 0.1
+    semantic_similarity: 0.15
+  unrelated_title_penalty_threshold: 0.45
+  unrelated_title_penalty_factor: 0.7
+  relevant_titles:
+    - machine learning engineer
+    - ai engineer
+    - ml engineer
+    - applied scientist
+    - data scientist
+    - backend engineer
+    - search engineer
+    - recommendation engineer
+    - software engineer
+    - software engineer ml
+    - nlp engineer
+    - retrieval engineer
+    - ranking engineer
+    - ai research engineer
+    - computer vision engineer
+    - ai specialist
+  unrelated_titles:
+    - hr manager
+    - accountant
+    - sales executive
+    - marketing manager
+    - recruiter
+    - graphic designer
+    - content writer
+    - customer support
+    - civil engineer
+    - mechanical engineer
+    - operations manager
+  domain_keywords:
+    - artificial intelligence
+    - ai
+    - machine learning
+    - ml
+    - retrieval
+    - information retrieval
+    - semantic search
+    - vector search
+    - vector database
+    - faiss
+    - pinecone
+    - weaviate
+    - qdrant
+    - milvus
+    - pgvector
+    - ranking
+    - recommendation
+    - recommender
+    - nlp
+    - llm
+    - llms
+    - backend
+    - api
+    - microservices
+    - distributed systems
+    - mlops
+    - model deployment

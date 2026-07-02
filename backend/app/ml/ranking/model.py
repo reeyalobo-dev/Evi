@@ -11,6 +11,8 @@ class LambdaMartRanker:
         self.model_path = Path(model_path or Path(__file__).resolve().parents[2] / "trained_models" / "ranker.joblib")
         self.model_path.parent.mkdir(parents=True, exist_ok=True)
         self.model = RandomForestRegressor(n_estimators=80, random_state=42)
+        if self.model_path.exists():
+            self.load()
 
     def train(self, X: np.ndarray, y: np.ndarray) -> None:
         self.model.fit(X, y)

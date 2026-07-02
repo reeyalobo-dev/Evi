@@ -84,3 +84,32 @@ backend/India_runs_data_and_ai_challenge/candidates.jsonl
 
 # Optional generated artifacts
 backend/results/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Model artifacts
+*.joblib
+
+# Generated outputs
+backend/results/
+backend/submission.csv
+backend/submission.xlsx
+backend/ranking_report.json
+backend/retrieval_report.json
+backend/backend_audit.md
+
+# Embeddings
+backend/app/embeddings/
+
+# Dataset
+backend/India_runs_data_and_ai_challenge/candidates.jsonl
+
+# Worktrees
+Evi.worktrees/
