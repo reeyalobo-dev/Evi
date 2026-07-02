@@ -78,3 +78,9 @@ backend/results/
 backend/app/trained_models/*.joblib
 backend/faiss_index.joblib
 backend/.env.local
+
+# Challenge dataset
+backend/India_runs_data_and_ai_challenge/candidates.jsonl
+
+# Optional generated artifacts
+backend/results/
